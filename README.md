@@ -1,2 +1,0 @@
-# datascience-machinelearning
-coursera project
