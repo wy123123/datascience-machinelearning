@@ -44,3 +44,28 @@ training = concrete[ inTrain,]
 testing = concrete[-inTrain,]
 modfit=train(CompressiveStrength~.,method="lasso",data=training)
 varImp(modfit)
+
+
+library(lubridate)  # For year() function below
+dat = read.csv("C:/Users/Lovebonito/Downloads/gaData.csv")
+training = dat[year(dat$date) < 2012,]
+testing = dat[(year(dat$date)) > 2011,]
+tstrain = ts(training$visitsTumblr)
+tstesting=ts(testing$visitsTumblr)
+require(forecast)
+a=bats(tstrain)
+predict(a,level=0.95)
+s=forecast(a,level=0.95,h=235)
+plot(tstrain)
+
+require(e1071)
+set.seed(325)
+library(AppliedPredictiveModeling)
+data(concrete)
+inTrain = createDataPartition(concrete$CompressiveStrength, p = 3/4)[[1]]
+training = concrete[ inTrain,]
+testing = concrete[-inTrain,]
+model <- svm(CompressiveStrength ~ ., data = training)
+predict(model,testing)
+require(hydroGOF)
+rmse(predict(model,testing),testing$CompressiveStrength)
