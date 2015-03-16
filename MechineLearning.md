@@ -8,7 +8,7 @@ The data are quite detailed and obviously we dont need to use all of the variabl
       3. Similar to names, the time_stamp variable is inrelavent too.
       variables left: 153
   2. Remove NA columns
-      1. some colums contains mostly NA values and need to be removed
+      1. some colums contains mostly NA values and need to be removed.
       variables left: 86
   3. Remove zero covirate
       1. use function nearZeroVar to remove near zero covirate columns.
