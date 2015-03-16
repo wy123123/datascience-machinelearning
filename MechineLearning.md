@@ -6,6 +6,13 @@ The data are quite detailed and obviously we dont need to use all of the variabl
       1. The experiment is conducted over a short period of time and there should be minimum change in the participants' phycical ability.
       2. Name is really inrelavent to the study as we only care how the exercises are performed not who.
       3. Similar to names, the time_stamp variable is inrelavent too.
-  2. After reading the paper "Qualitative Activity Recognition of Weight Lifting Exercises",
-    I found that they use a method called sliding window approach to record the data.
-    Variables new_window and num_window indicate indicates if the record i
+      variables left: 153
+  2. Remove NA columns
+      some colums contains mostly NA values and need to be removed
+      variables left: 86
+  3. Remove zero covirate
+      use function nearZeroVar to remove near zero covirate columns.
+      removing the columns with almost zero varianve in data.
+      variables left: 52
+
+
