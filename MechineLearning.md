@@ -7,4 +7,5 @@ The data are quite detailed and obviously we dont need to use all of the variabl
       2. Name is really inrelavent to the study as we only care how the exercises are performed not who.
       3. Similar to names, the time_stamp variable is inrelavent too.
   2. After reading the paper "Qualitative Activity Recognition of Weight Lifting Exercises",
-    I found that they use Variables new_window and num_window indicate 
+    I found that they use a method called sliding window approach to record the data.
+    Variables new_window and num_window indicate indicates if the record i
