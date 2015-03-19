@@ -35,10 +35,10 @@ trainP=predict(pre,dt.train.4.v)
 testP=predict(pre,dt.test.4.v)
 
 #training model
-mod.1 <- train(dt.train.4$classe~.,method="rf",data=trainP,trainControl(method="cv",number=10))
-mod.2 <- train(dt.train.4$classe~.,method="gbm",data=trainP,verbose=F,trainControl(method="cv",number=10))
-mod.3 <- train(dt.train.4$classe~.,method="rpart",data=trainP,trainControl(method="cv",number=10))
-mod.4 <- train(dt.train.4$classe~.,method="lda",data=trainP,trainControl(method="cv",number=10))
+mod.1 <- train(dt.train.4$classe~.,method="rf",data=trainP)
+mod.2 <- train(dt.train.4$classe~.,method="gbm",data=trainP)
+mod.3 <- train(dt.train.4$classe~.,method="rpart",data=trainP)
+mod.4 <- train(dt.train.4$classe~.,method="lda",data=trainP)
 
 confusionMatrix(dt.test.4$classe,predict(mod.3,testP))
 varImp(mod.1)
