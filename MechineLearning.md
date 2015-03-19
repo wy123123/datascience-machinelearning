@@ -4,8 +4,11 @@ After downloadding the data and finding out that there are 19000+ rows and 160 v
 The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few round of feature selection
   
   1.To predict the "manner in which they did the exercise", I throw away varabless like "X":index,"user_name","raw_timestamp_part_1","raw_timestamp_part_2", "cvtd_timestamp" base on assumtions:
+      
       1. The experiment is conducted over a short period of time and there should be minimum change in the participants' phycical ability, thus index is not a factor
+      
       2. Name is really inrelavent to the study as we only care how the exercises are performed not who.
+      
       3. Similar to names, the time_stamp variable is inrelavent too.
       
 variables left: 153
