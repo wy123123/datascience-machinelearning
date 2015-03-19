@@ -52,7 +52,7 @@ set.seed(123)
 #create 10 folds, find the average sample error of the 10 sets of data
 folds.train <- createFolds(y=dt.train$classe,k=10,list=T,returnTrain=T)
 folds.test<- createFolds(y=dt.train$classe,k=10,list=T,returnTrain=F)
-cmatrix=0
+cmatrix=list()
 for(i in 1 : 10){
         
         dt.train.1 <- subset(dt.train[folds.train[[i]],],select=-c(X,user_name,raw_timestamp_part_1,raw_timestamp_part_2,cvtd_timestamp,num_window))
@@ -71,9 +71,11 @@ for(i in 1 : 10){
         #PCA for further dimention reduction
         pre <- preProcess(dt.train.4.v,method="pca")
         #tansforme data
-        trainP=predict(pre,dt.train.4.v)
-        testP=predict(pre,dt.test.4.v)
+        trainP <- predict(pre,dt.train.4.v)
+        testP <- predict(pre,dt.test.4.v)
         
         mod <- train(dt.train.4$classe~.,method="rf",data=trainP)
-        cmatrix[i]=confusionMatrix(dt.test.4$classe,predict(mod.3,testP))
+        cmatrix[[i]] <- confusionMatrix(dt.test.4$classe,predict(mod,testP))$overall
 }
+
+mean(as.numeric(unlist(lapply(cmatrix,'[[',1))))
