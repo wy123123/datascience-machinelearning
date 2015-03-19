@@ -14,17 +14,20 @@ The data are quite detailed and obviously we dont need to use all of the variabl
 variables left: 153
 
   2.Remove NA columns
+      
       1. some colums contains mostly NA values and need to be removed. The column is removed if it contains more than 90% of NAs
       
 variables left: 86
 
   3.Remove zero covirate
+      
       1. use function nearZeroVar to remove near zero covirate columns.
          removing the columns with almost zero varianve in data.
          
 variables left: 52
 
   4.PCA for future dimention reductions
+      
       1. Threshole applied: 95%, result shown below.
         
         Call:
