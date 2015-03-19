@@ -34,11 +34,11 @@ pre <- preProcess(dt.train.4.v,method="pca")
 trainP=predict(pre,dt.train.4.v)
 testP=predict(pre,dt.test.4.v)
 
-#model selection
-mod.1 <- train(dt.train.4$classe~.,method="rf",data=trainP)
-mod.2 <- train(dt.train.4$classe~.,method="gbm",data=trainP,verbose=F)
-mod.3 <- train(dt.train.4$classe~.,method="rpart",data=trainP)
-mod.4 <- train(dt.train.4$classe~.,method="lda",data=trainP)
+#training model
+mod.1 <- train(dt.train.4$classe~.,method="rf",data=trainP,trainControl(method="cv",number=10))
+mod.2 <- train(dt.train.4$classe~.,method="gbm",data=trainP,verbose=F,trainControl(method="cv",number=10))
+mod.3 <- train(dt.train.4$classe~.,method="rpart",data=trainP,trainControl(method="cv",number=10))
+mod.4 <- train(dt.train.4$classe~.,method="lda",data=trainP,trainControl(method="cv",number=10))
 
 confusionMatrix(dt.test.4$classe,predict(mod.3,testP))
 varImp(mod.1)
