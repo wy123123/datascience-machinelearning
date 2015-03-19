@@ -26,7 +26,7 @@ variables left: 86
          
 variables left: 52
 
-  4.PCA for future dimention reductions
+  4.PCA for further dimention reductions
       
       1. Threshole applied: 95%, result shown below.
         
