@@ -1,28 +1,132 @@
-#MechineLearning
+<h1>MechineLearning Project</h1>
 
-After downloadding the data and finding out that there are 19000+ rows and 160 variables.
+<p>After downloadding the data and finding out that there are 19000+ rows and 160 variables.</p>
 
-The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few round of feature selection
-1.To predict the "manner in which they did the exercise", I throw away varabless like "X":index,"user_name","raw_timestamp_part_1","raw_timestamp_part_2", "cvtd_timestamp" base on assumtions:
-1. The experiment is conducted over a short period of time and there should be minimum change in the participants' phycical ability, thus index is not a factor
-2. Name is really inrelavent to the study as we only care how the exercises are performed not who.
-3. Similar to names, the time_stamp variable is inrelavent too.
-variables left: 153
-2.Remove NA columns
-1. some colums contain mostly NA values thus they need to be removed. The column is removed if it contains more than 90% of NAs
-variables left: 86
-3.Remove zero covirate
-1. use function nearZeroVar to remove near zero covirate columns.
-removing the columns with almost zero varianve in data.
-variables left: 52
-4.PCA for further dimention reductions
-1. Threshole applied: 95%, result shown below.
-Call:
-preProcess.default(x = dt.4.v, method = "pca")
-Created from 19622 samples and 52 variables
-Pre-processing: principal component signal extraction, scaled, centered
-PCA needed 25 components to capture 95 percent of the variance
-Variables left: 25
+<h2>Feature Selection</h2>
+<p>The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few round of feature selection.</p>
 
-At this point, I think that the 
+<h3>1.To predict the "manner in which they did the exercise", I throw away varables like: X,user_name,raw_timestamp_part_1,raw_timestamp_part_2,cvtd_timestamp,num_window and classe under the assumptions:</h3>
+  
+<p style="text-indent: 4em;"> a. The experiment is conducted over a short period of time and there should be minimum change in the participants' phycical ability, thus index is not a factor.</p>
+  
+<p style="text-indent: 4em;">b. Name is really inrelavent to the study as we only care about how the exercises are performed not the testing subjects.<br>
+  
+<p><b>variables left: 153</b></p>
 
+<h3>2.Remove NA columns</h3>
+
+<p style="text-indent: 4em;">  a. some colums contain mostly NA values thus they need to be removed. The column is removed if it contains more than 95% of NAs.<br><br>
+
+<b>variables left: 86</b></p>
+
+<h3>3.Remove zero covirate</h3>
+
+<p style="text-indent: 4em;"> a. use function nearZeroVar to remove near zero covirate columns.Removing the columns with almost zero varianve in data as these variables will not provide useful information to our dataset.<br><br>
+
+<b>variables left: 52</b></p>
+
+<h3>4.PCA for further dimention reductions</h3>
+
+ <p style="text-indent: 4em;"> Threshole applied: 95%, result shown below.</p>
+
+ <p style="text-indent: 4em;"><code ><b>   Call:<br>
+ <p style="text-indent: 4em;">preProcess.default(x = train, method = "pca")
+ <p style="text-indent: 4em;">   Created from 19622 samples and 52 variables
+ <p style="text-indent: 4em;">   Pre-processing: principal component signal extraction, scaled, centered
+ <p style="text-indent: 4em;">   PCA needed 25 components to capture 95 percent of the variance</b></code><br><br>
+
+<b>Variables left: 25</b></p>
+
+<p>At this point, I think that 25 Variables is a reaonalbe number of variables and we proceed to the next step.</p>
+
+<h2>Choose the better learning algorithm</h2>
+
+<p>For this data set, I compared the performance of "Radom Forest", "Linear Discrimation Analysis" and "rpart".</p>
+
+<p>After using the P-package caret to finish the learning processes and comparing the learning results with the data results.</p>
+<p>the results are shown below.</p>
+
+<b>For random forest:</b>
+<p style="text-indent: 4em;"><b><code>Confusion Matrix and Statistics
+
+<p style="text-indent: 4em;">Reference
+<p style="text-indent: 4em;">Prediction    A    B    C    D    E
+<p style="text-indent: 8em;">A 5580    0    0    0    0
+<p style="text-indent: 8em;">B    0 3797    0    0    0
+<p style="text-indent: 8em;">C    0    0 3422    0    0
+<p style="text-indent: 8em;">D    0    0    0 3216    0
+<p style="text-indent: 8em;">E    0    0    0    0 3607
+
+<p style="text-indent: 4em;">Overall Statistics
+                                     
+<p style="text-indent: 4em;">               Accuracy : 1         
+<p style="text-indent: 4em;">                 95% CI : (0.9998, 1)
+<p style="text-indent: 4em;">    No Information Rate : 0.2844    
+<p style="text-indent: 4em;">    P-Value [Acc > NIR] : < 2.2e-16                                      
+<p style="text-indent: 4em;">                  Kappa : 1          
+<p style="text-indent: 4em;">Mcnemar's Test P-Value : NA</b></code></p>     
+ 
+<b>For classification tree:</b>
+<p style="text-indent: 4em;"><b><code> Confusion Matrix and Statistics
+
+<p style="text-indent: 4em;">          Reference
+<p style="text-indent: 4em;">Prediction    A    B    C    D    E
+<p style="text-indent: 8em;">         A 5145    0    0  373   62
+<p style="text-indent: 8em;">         B 2558    0    0  729  510
+<p style="text-indent: 8em;">         C 3210    0    0  154   58
+<p style="text-indent: 8em;">         D 1701    0    0 1258  257
+<p style="text-indent: 8em;">         E 2013    0    0  511 1083
+
+<p style="text-indent: 4em;">Overall Statistics
+                                          
+<p style="text-indent: 4em;">               Accuracy : 0.3815          
+<p style="text-indent: 4em;">                 95% CI : (0.3747, 0.3883)
+<p style="text-indent: 4em;">    No Information Rate : 0.7454          
+<p style="text-indent: 4em;">    P-Value [Acc > NIR] : 1               
+                                          
+<p style="text-indent: 4em;">                  Kappa : 0.169           
+<p style="text-indent: 4em;"> Mcnemar's Test P-Value : NA   </b></code></p>      
+ 
+<b>For linear Discrimation Analysis</b>
+<p style="text-indent: 4em;"><b><code>  Confusion Matrix and Statistics
+
+<p style="text-indent: 4em;">           Reference
+<p style="text-indent: 4em;">Prediction    A    B    C    D    E
+<p style="text-indent: 8em;">         A 3645  485  591  819   40
+<p style="text-indent: 8em;">         B  860 1644  684  397  212
+<p style="text-indent: 8em;">         C  901  363 1771  317   70
+<p style="text-indent: 8em;">         D  235  542  491 1676  272
+<p style="text-indent: 8em;">         E  312  715  455  484 1641
+
+<p style="text-indent: 4em;">Overall Statistics
+                                          
+<p style="text-indent: 4em;">               Accuracy : 0.5288          
+<p style="text-indent: 4em;">                 95% CI : (0.5218, 0.5359)
+<p style="text-indent: 4em;">    No Information Rate : 0.3034          
+<p style="text-indent: 4em;">    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+<p style="text-indent: 4em;">                  Kappa : 0.4032          
+<p style="text-indent: 4em;"> Mcnemar's Test P-Value : < 2.2e-16    </b></code></p> 
+ 
+<p>It is clear that random forest has a much better performance than the other two algorithems.</p>
+
+<h2>Cross-validations</h2>
+
+<p>I am going to use "k-fold" method to perform the cross-validation.</p>
+
+<p>I used 3 folds to save some compution time as the one down-side of random forest algorithm is the compution time, with 25 variables, the learning process costs about 2 hours.</p>
+
+<p><b>Results of the three sets of data:</b></p>
+<p style="text-indent: 4em;"><b><code>[[1]]
+<p style="text-indent: 4em;">      Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
+<p style="text-indent: 4em;">     0.9911329      0.9887851      0.9885521      0.9932601      0.2839015      0.0000000            NaN 
+
+<p style="text-indent: 4em;">[[2]]
+<p style="text-indent: 4em;">     Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
+<p style="text-indent: 4em;">     0.9906742      0.9882035      0.9880365      0.9928592      0.2849717      0.0000000            NaN 
+
+<p style="text-indent: 4em;">[[3]]
+<p style="text-indent: 4em;">    Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
+<p style="text-indent: 4em;">  0.9912844      0.9889727      0.9887225      0.9933924      0.2870031      0.0000000            NaN </b> </code> </p> 
+     
+<p>It gives a average of <b>0.9910305 </b>accuracy.</p>
