@@ -29,11 +29,11 @@
 
  <p style="text-indent: 4em;"> Threshole applied: 95%, result shown below.</p>
 
- <p style="text-indent: 4em;"><code ><b>   Call:<br>
+ <p style="text-indent: 4em;"><code >   Call:<br>
  <p style="text-indent: 4em;">preProcess.default(x = train, method = "pca")
  <p style="text-indent: 4em;">   Created from 19622 samples and 52 variables
  <p style="text-indent: 4em;">   Pre-processing: principal component signal extraction, scaled, centered
- <p style="text-indent: 4em;">   PCA needed 25 components to capture 95 percent of the variance</b></code><br><br>
+ <p style="text-indent: 4em;">   PCA needed 25 components to capture 95 percent of the variance</code><br><br>
 
 <b>Variables left: 25</b></p>
 
@@ -47,7 +47,7 @@
 <p>the results are shown below.</p>
 
 <b>For random forest:</b>
-<p style="text-indent: 4em;"><b><code>Confusion Matrix and Statistics
+<p style="text-indent: 4em;"><code>Confusion Matrix and Statistics
 
 <p style="text-indent: 4em;">Reference
 <p style="text-indent: 4em;">Prediction    A    B    C    D    E
@@ -64,10 +64,10 @@
 <p style="text-indent: 4em;">    No Information Rate : 0.2844    
 <p style="text-indent: 4em;">    P-Value [Acc > NIR] : < 2.2e-16                                      
 <p style="text-indent: 4em;">                  Kappa : 1          
-<p style="text-indent: 4em;">Mcnemar's Test P-Value : NA</b></code></p>     
+<p style="text-indent: 4em;">Mcnemar's Test P-Value : NA</code></p>     
  
 <b>For classification tree:</b>
-<p style="text-indent: 4em;"><b><code> Confusion Matrix and Statistics
+<p style="text-indent: 4em;"><code> Confusion Matrix and Statistics
 
 <p style="text-indent: 4em;">          Reference
 <p style="text-indent: 4em;">Prediction    A    B    C    D    E
@@ -85,10 +85,10 @@
 <p style="text-indent: 4em;">    P-Value [Acc > NIR] : 1               
                                           
 <p style="text-indent: 4em;">                  Kappa : 0.169           
-<p style="text-indent: 4em;"> Mcnemar's Test P-Value : NA   </b></code></p>      
+<p style="text-indent: 4em;"> Mcnemar's Test P-Value : NA   </code></p>      
  
 <b>For linear Discrimation Analysis</b>
-<p style="text-indent: 4em;"><b><code>  Confusion Matrix and Statistics
+<p style="text-indent: 4em;"><code>  Confusion Matrix and Statistics
 
 <p style="text-indent: 4em;">           Reference
 <p style="text-indent: 4em;">Prediction    A    B    C    D    E
@@ -106,7 +106,7 @@
 <p style="text-indent: 4em;">    P-Value [Acc > NIR] : < 2.2e-16       
                                           
 <p style="text-indent: 4em;">                  Kappa : 0.4032          
-<p style="text-indent: 4em;"> Mcnemar's Test P-Value : < 2.2e-16    </b></code></p> 
+<p style="text-indent: 4em;"> Mcnemar's Test P-Value : < 2.2e-16   </code></p> 
  
 <p>It is clear that random forest has a much better performance than the other two algorithems.</p>
 
@@ -117,7 +117,7 @@
 <p>I used 3 folds to save some compution time as the one down-side of random forest algorithm is the compution time, with 25 variables, the learning process costs about 2 hours.</p>
 
 <p><b>Results of the three sets of data:</b></p>
-<p style="text-indent: 4em;"><b><code>[[1]]
+<p style="text-indent: 4em;"><code>[[1]]
 <p style="text-indent: 4em;">      Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
 <p style="text-indent: 4em;">     0.9911329      0.9887851      0.9885521      0.9932601      0.2839015      0.0000000            NaN 
 
@@ -127,6 +127,6 @@
 
 <p style="text-indent: 4em;">[[3]]
 <p style="text-indent: 4em;">    Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
-<p style="text-indent: 4em;">  0.9912844      0.9889727      0.9887225      0.9933924      0.2870031      0.0000000            NaN </b> </code> </p> 
+<p style="text-indent: 4em;">  0.9912844      0.9889727      0.9887225      0.9933924      0.2870031      0.0000000            NaN  </code> </p> 
      
 <p>It gives a average of <b>0.9910305 </b>accuracy.</p>
