@@ -43,7 +43,7 @@
 
 <p>For this data set, I compared the performance of "Radom Forest", "Linear Discrimation Analysis" and "rpart".</p>
 
-<p>After using the P-package caret to finish the learning processes and comparing the learning results with the training data set.</p>
+<p>After using the r-package caret to finish the learning processes and comparing the learning results with the training data set.</p>
 <p>the results are shown below.</p>
 
 <b>For random forest:</b>
@@ -108,13 +108,13 @@
 <p style="text-indent: 4em;">                  Kappa : 0.4032          
 <p style="text-indent: 4em;"> Mcnemar's Test P-Value : < 2.2e-16   </code></p> 
  
-<p>It is clear that random forest has a much better performance than the other two algorithems.</p>
+<p>It is clear that random forest has a much better performance than the other two algorithms.</p>
 
 <h2>Cross-validations</h2>
 
 <p>I am going to use "k-fold" method to perform the cross-validation.</p>
 
-<p>I used 3 folds to save some computation time as the one down-side of random forest algorithm is its extensive computation, with 25 variables, the learning process costs about 2 hours for each data set.</p>
+<p>I used only 3 folds to save some computation time as the one down-side of random forest algorithm is its extensive computation, with 25 variables, the learning process costs about 2 hours for each data set.</p>
 <p>I applied randdom forest algorithm to these three datasets and compared the prediction results with the testing sets, the results are shown below</p>
 <p><b>Results of the three sets of data:</b></p>
 <p style="text-indent: 4em;"><code>[[1]]
