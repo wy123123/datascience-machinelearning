@@ -27,7 +27,7 @@
 
 <h3>4.PCA for further dimension reduction</h3>
 
- <p style="text-indent: 4em;"> Threshole applied: 95%, result shown below.</p>
+ <p style="text-indent: 4em;"> Threshole applied: 95%, result is shown below.</p>
 
  <p style="text-indent: 4em;"><code >   Call:<br>
  <p style="text-indent: 4em;">preProcess.default(x = train, method = "pca")
@@ -114,8 +114,8 @@
 
 <p>I am going to use "k-fold" method to perform the cross-validation.</p>
 
-<p>I used 3 folds to save some computation time as the one down-side of random forest algorithm is the computation time, with 25 variables, the learning process costs about 2 hours.</p>
-
+<p>I used 3 folds to save some computation time as the one down-side of random forest algorithm is its extensive computation, with 25 variables, the learning process costs about 2 hours for each data set.</p>
+<p>I applied randdom forest algorithm to these three datasets and compared the prediction results with the testing sets, the results are shown below</p>
 <p><b>Results of the three sets of data:</b></p>
 <p style="text-indent: 4em;"><code>[[1]]
 <p style="text-indent: 4em;">      Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
