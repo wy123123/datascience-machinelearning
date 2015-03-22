@@ -1,9 +1,9 @@
 <h1>MechineLearning Project</h1>
 
-<p>After downloadding the data and finding out that there are 19000+ rows and 160 variables.</p>
+<p>After downloadding the data and I found out that there are 19000+ rows and 160 variables.</p>
 
 <h2>Feature Selection</h2>
-<p>The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few round of feature selection.</p>
+<p>The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few rounds of feature selection.</p>
 
 <h3>1.To predict the "manner in which they did the exercise", I throw away varables like: X,user_name,raw_timestamp_part_1,raw_timestamp_part_2,cvtd_timestamp,num_window and classe under the assumptions:</h3>
   
@@ -19,13 +19,13 @@
 
 <b>variables left: 86</b></p>
 
-<h3>3.Remove zero covirate</h3>
+<h3>3.Remove zero covirate columns</h3>
 
 <p style="text-indent: 4em;"> a. use function nearZeroVar to remove near zero covirate columns.Removing the columns with almost zero varianve in data as these variables will not provide useful information to our dataset.<br><br>
 
 <b>variables left: 52</b></p>
 
-<h3>4.PCA for further dimention reductions</h3>
+<h3>4.PCA for further dimension reduction</h3>
 
  <p style="text-indent: 4em;"> Threshole applied: 95%, result shown below.</p>
 
@@ -134,4 +134,4 @@
 <p>After going through all the same variavle selection as the train set and applying the trained model using random forest.<br>
 The result of the predicted values are:<br>
 B A A A A E D B A A B C B A E E A B B B</p>
-<p>The result is 19/20 correct based on the autograding system</p>
+<p>The result is 19/20 correct based on the autograding system.</p>
