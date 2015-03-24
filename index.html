@@ -1,7 +1,18 @@
-<h1>MachineLearning Project</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  section {
+    padding:10px 150px;	 	 
+}
+</style>
+</head>
 
+<body>
+<h1 style="text-align:center">MachineLearning Project<br>
+	A coursera project</h1>
+<section>
 <p>After downloadding the data and I found out that there are 19000+ rows and 160 variables.</p>
-
 <h2>Feature Selection</h2>
 <p>The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few rounds of feature selection.</p>
 
@@ -26,14 +37,14 @@
 <b>variables left: 52</b></p>
 
 <h3>4.PCA for further dimension reduction</h3>
+<div style="background-color:AliceBlue ; color:black; padding:20px;">
+<pre><code>	Threshole applied: 95%, result is shown below
 
- <p style="text-indent: 4em;"> Threshole applied: 95%, result is shown below.</p>
-
- <p style="text-indent: 4em;"><code >   Call:<br>
- <p style="text-indent: 4em;">preProcess.default(x = train, method = "pca")
- <p style="text-indent: 4em;">   Created from 19622 samples and 52 variables
- <p style="text-indent: 4em;">   Pre-processing: principal component signal extraction, scaled, centered
- <p style="text-indent: 4em;">   PCA needed 25 components to capture 95 percent of the variance</code><br><br>
+	Call:
+	preProcess.default(x = train, method = "pca")
+	Created from 19622 samples and 52 variables
+	Pre-processing: principal component signal extraction, scaled, centered
+	PCA needed 25 components to capture 95 percent of the variance</code></pre></div><br><br>
 
 <b>Variables left: 25</b></p>
 
@@ -47,93 +58,110 @@
 <p>the results are shown below.</p>
 
 <b>For random forest:</b>
-<p style="text-indent: 4em;"><code>Confusion Matrix and Statistics
+<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
+<pre style="text-indent: 4em;"><code>
+	Confusion Matrix and Statistics
+	Reference
+	Prediction   A    B    C    D    E
+		A 5580    0    0    0    0
+		B    0 3797    0    0    0
+		C    0    0 3422    0    0
+		E    0    0    0    0 3607
 
-<p style="text-indent: 4em;">Reference
-<p style="text-indent: 4em;">Prediction    A    B    C    D    E
-<p style="text-indent: 8em;">A 5580    0    0    0    0
-<p style="text-indent: 8em;">B    0 3797    0    0    0
-<p style="text-indent: 8em;">C    0    0 3422    0    0
-<p style="text-indent: 8em;">D    0    0    0 3216    0
-<p style="text-indent: 8em;">E    0    0    0    0 3607
-
-<p style="text-indent: 4em;">Overall Statistics
+	Overall Statistics
                                      
-<p style="text-indent: 4em;">               Accuracy : 1         
-<p style="text-indent: 4em;">                 95% CI : (0.9998, 1)
-<p style="text-indent: 4em;">    No Information Rate : 0.2844    
-<p style="text-indent: 4em;">    P-Value [Acc > NIR] : < 2.2e-16                                      
-<p style="text-indent: 4em;">                  Kappa : 1          
-<p style="text-indent: 4em;">Mcnemar's Test P-Value : NA</code></p>     
+               Accuracy : 1         
+                 95% CI : (0.9998, 1)
+	No Information Rate : 0.2844    
+	P-Value [Acc > NIR] : < 2.2e-16                                      
+                  Kappa : 1
+				  
+	Mcnemar's Test P-Value : NA
+	</code>
+	</pre>  
+</div>	
  
 <b>For classification tree:</b>
-<p style="text-indent: 4em;"><code> Confusion Matrix and Statistics
+<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
+<pre style="text-indent: 4em;"><code>
+	Confusion Matrix and Statistics
+	Reference
+	Prediction   A    B    C    D    E
+		A 5145    0    0  373   62
+		B 2558    0    0  729  510
+		C 3210    0    0  154   58
+		D 1701    0    0 1258  257
+		E 2013    0    0  511 1083
 
-<p style="text-indent: 4em;">          Reference
-<p style="text-indent: 4em;">Prediction    A    B    C    D    E
-<p style="text-indent: 8em;">         A 5145    0    0  373   62
-<p style="text-indent: 8em;">         B 2558    0    0  729  510
-<p style="text-indent: 8em;">         C 3210    0    0  154   58
-<p style="text-indent: 8em;">         D 1701    0    0 1258  257
-<p style="text-indent: 8em;">         E 2013    0    0  511 1083
-
-<p style="text-indent: 4em;">Overall Statistics
+	Overall Statistics
                                           
-<p style="text-indent: 4em;">               Accuracy : 0.3815          
-<p style="text-indent: 4em;">                 95% CI : (0.3747, 0.3883)
-<p style="text-indent: 4em;">    No Information Rate : 0.7454          
-<p style="text-indent: 4em;">    P-Value [Acc > NIR] : 1               
-                                          
-<p style="text-indent: 4em;">                  Kappa : 0.169           
-<p style="text-indent: 4em;"> Mcnemar's Test P-Value : NA   </code></p>      
+               Accuracy : 0.3815          
+                 95% CI : (0.3747, 0.3883)
+		No Information Rate : 0.7454          
+		P-Value [Acc > NIR] : 1
+		
+                  Kappa : 0.169           
+	Mcnemar's Test P-Value : NA</code></pre>
+</div>	
  
 <b>For linear Discrimation Analysis:</b>
-<p style="text-indent: 4em;"><code>  Confusion Matrix and Statistics
+<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
+<pre style="text-indent: 4em;"><code>
+	Confusion Matrix and Statistics
+	Reference
+	Prediction   A    B    C    D    E
+		A 3645  485  591  819   40
+		B  860 1644  684  397  212
+		C  901  363 1771  317   70
+		D  235  542  491 1676  272
+		E  312  715  455  484 1641
 
-<p style="text-indent: 4em;">           Reference
-<p style="text-indent: 4em;">Prediction    A    B    C    D    E
-<p style="text-indent: 8em;">         A 3645  485  591  819   40
-<p style="text-indent: 8em;">         B  860 1644  684  397  212
-<p style="text-indent: 8em;">         C  901  363 1771  317   70
-<p style="text-indent: 8em;">         D  235  542  491 1676  272
-<p style="text-indent: 8em;">         E  312  715  455  484 1641
-
-<p style="text-indent: 4em;">Overall Statistics
+	Overall Statistics
                                           
-<p style="text-indent: 4em;">               Accuracy : 0.5288          
-<p style="text-indent: 4em;">                 95% CI : (0.5218, 0.5359)
-<p style="text-indent: 4em;">    No Information Rate : 0.3034          
-<p style="text-indent: 4em;">    P-Value [Acc > NIR] : < 2.2e-16       
+               Accuracy : 0.5288          
+                 95% CI : (0.5218, 0.5359)
+		No Information Rate : 0.3034          
+		P-Value [Acc > NIR] : < 2.2e-16       
                                           
-<p style="text-indent: 4em;">                  Kappa : 0.4032          
-<p style="text-indent: 4em;"> Mcnemar's Test P-Value : < 2.2e-16   </code></p> 
+                  Kappa : 0.4032          
+	Mcnemar's Test P-Value : < 2.2e-16   </code></pre>
+</div>	
  
 <p>It is clear that random forest has a much better performance than the other two algorithms.</p>
 
 <h2>Cross-validations</h2>
 
-<p>I am going to use "k-fold" method to perform the cross-validation.</p>
+<p>I am going to use "k-fold" method to perform the cross-validation.<br>
+I used only 3 folds to save some computation time as the one down-side of random forest algorithm is its extensive computation, with 25 variables, the learning process costs about 2 hours for each data set.
+	<br>I applied randdom forest algorithm to these three datasets and compared the prediction results with the testing sets, the results are shown below:
+<br><b>Results of the three sets of data:</b></p>
+<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
+	<pre>
+		<code>
+	[[1]]
+    Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
+    0.9911329      0.9887851      0.9885521      0.9932601      0.2839015      0.0000000            NaN 
 
-<p>I used only 3 folds to save some computation time as the one down-side of random forest algorithm is its extensive computation, with 25 variables, the learning process costs about 2 hours for each data set.</p>
-<p>I applied randdom forest algorithm to these three datasets and compared the prediction results with the testing sets, the results are shown below</p>
-<p><b>Results of the three sets of data:</b></p>
-<p style="text-indent: 4em;"><code>[[1]]
-<p style="text-indent: 4em;">      Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
-<p style="text-indent: 4em;">     0.9911329      0.9887851      0.9885521      0.9932601      0.2839015      0.0000000            NaN 
+	[[2]]
+    Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
+    0.9906742      0.9882035      0.9880365      0.9928592      0.2849717      0.0000000            NaN 
 
-<p style="text-indent: 4em;">[[2]]
-<p style="text-indent: 4em;">     Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
-<p style="text-indent: 4em;">     0.9906742      0.9882035      0.9880365      0.9928592      0.2849717      0.0000000            NaN 
-
-<p style="text-indent: 4em;">[[3]]
-<p style="text-indent: 4em;">    Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
-<p style="text-indent: 4em;">  0.9912844      0.9889727      0.9887225      0.9933924      0.2870031      0.0000000            NaN  </code> </p> 
-     
-<p>It gives a average of <b>99.10305% </b>accuracy.<br>
-The <b>out of sample error is approximately 0.9%</b>
+	[[3]]
+    Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
+    0.9912844      0.9889727      0.9887225      0.9933924      0.2870031      0.0000000            NaN </code></pre></div>   
+<p>
+It gives a average of <b> 99.10305% </b>accuracy.<br>
+The <b>out of sample error is approximately 0.9%.</b>
 </p>
 <h2>Predict the test set</h2>
-<p>After going through all the same variavle selection as the train set and applying the trained model using random forest.<br>
+<p>
+After going through all the same variavle selection as the train set and applying the trained model using random forest.<br>
 The result of the predicted values are:<br>
-B A A A A E D B A A B C B A E E A B B B</p>
-<p>The result is 19/20 correct based on the autograding system.</p>
+B A A A A E D B A A B C B A E E A B B B
+</p>
+<p>
+The result is 19/20 correct based on the autograding system.
+</p>
+</section>
+</body>
+</html>
