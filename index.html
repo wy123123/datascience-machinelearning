@@ -12,7 +12,7 @@
 <h1 style="text-align:center">MachineLearning Project<br>
 	A coursera project</h1>
 <section>
-<p>After downloadding the data and I found out that there are 19000+ rows and 160 variables.</p>
+<p>After downloading the data and I found out that there are 19000+ rows and 160 variables.</p>
 <h2>Feature Selection</h2>
 <p>The data are quite detailed and obviously we dont need to use all of the variables, which lead to our few rounds of feature selection.</p>
 
@@ -37,14 +37,14 @@
 <b>variables left: 52</b></p>
 
 <h3>4.PCA for further dimension reduction</h3>
-<div style="background-color:AliceBlue ; color:black; padding:20px;">
+<div style="background-color:AliceBlue ; color:grey;">
 <pre><code>	Threshole applied: 95%, result is shown below
 
 	Call:
 	preProcess.default(x = train, method = "pca")
 	Created from 19622 samples and 52 variables
 	Pre-processing: principal component signal extraction, scaled, centered
-	PCA needed 25 components to capture 95 percent of the variance</code></pre></div><br><br>
+	PCA needed 25 components to capture 95 percent of the variance</code></pre></div>
 
 <b>Variables left: 25</b></p>
 
@@ -58,9 +58,7 @@
 <p>the results are shown below.</p>
 
 <b>For random forest:</b>
-<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
-<pre style="text-indent: 4em;"><code>
-	Confusion Matrix and Statistics
+<div style="background-color:AliceBlue ; color:grey;"><pre><code >	Confusion Matrix and Statistics
 	Reference
 	Prediction   A    B    C    D    E
 		A 5580    0    0    0    0
@@ -76,15 +74,10 @@
 	P-Value [Acc > NIR] : < 2.2e-16                                      
                   Kappa : 1
 				  
-	Mcnemar's Test P-Value : NA
-	</code>
-	</pre>  
-</div>	
+	Mcnemar's Test P-Value : NA</code></pre></div>	
  
-<b>For classification tree:</b>
-<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
-<pre style="text-indent: 4em;"><code>
-	Confusion Matrix and Statistics
+<b>For classification tree:</b><div style="background-color:AliceBlue ; color:grey;">
+<pre><code>	Confusion Matrix and Statistics
 	Reference
 	Prediction   A    B    C    D    E
 		A 5145    0    0  373   62
@@ -105,9 +98,7 @@
 </div>	
  
 <b>For linear Discrimation Analysis:</b>
-<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
-<pre style="text-indent: 4em;"><code>
-	Confusion Matrix and Statistics
+<div style="background-color:AliceBlue ; color:grey;"><pre><code>	Confusion Matrix and Statistics
 	Reference
 	Prediction   A    B    C    D    E
 		A 3645  485  591  819   40
@@ -135,10 +126,8 @@
 I used only 3 folds to save some computation time as the one down-side of random forest algorithm is its extensive computation, with 25 variables, the learning process costs about 2 hours for each data set.
 	<br>I applied randdom forest algorithm to these three datasets and compared the prediction results with the testing sets, the results are shown below:
 <br><b>Results of the three sets of data:</b></p>
-<div style="background-color:AliceBlue ; color:black; padding:20px;text-indent: 4em;">
-	<pre>
-		<code>
-	[[1]]
+<div style="background-color:AliceBlue ; color:grey;">
+	<pre><code>	[[1]]
     Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull AccuracyPValue  McnemarPValue 
     0.9911329      0.9887851      0.9885521      0.9932601      0.2839015      0.0000000            NaN 
 
